@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -51,7 +52,8 @@ export default defineConfig({
       'yup',
       'react-select',
       'moment',
-      'jwt-decode'
+      'jwt-decode',
+      'jquery'
     ],
     esbuildOptions: {
       target: 'es2020'
@@ -59,9 +61,16 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/src'
+      '@': '/src',
+      'jquery': resolve(__dirname, 'node_modules/jquery/dist/jquery.js')
     },
     extensions: ['.js', '.jsx', '.json']
+  },
+  define: {
+    'global': {},
+    '$': 'jquery',
+    'jQuery': 'jquery',
+    'window.jQuery': 'jquery'
   },
   esbuild: {
     loader: 'jsx',
