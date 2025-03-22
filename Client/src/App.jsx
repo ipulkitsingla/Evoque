@@ -8,7 +8,6 @@ import SignIn from "./Components/Pages/SignIn";
 import SignUp from "./Components/Pages/SignUp";
 import Profile from "./Components/Pages/Profile";
 import Orders from "./Components/Pages/Orders";
-import AdminDashboard from "../../admin/src/components/Dashboard";
 import './App.css';
 
 function App() {
@@ -24,11 +23,6 @@ function App() {
         <Route path="/signup" exact={true} element={<SignUp />} />
         <Route path="/profile" exact={true} element={<Profile />} />
         <Route path="/orders" exact={true} element={<Orders />} />
-        
-        {/* Admin Routes */}
-        <Route path="/admin" exact={true} element={<AdminDashboard />} />
-        {/* <Route path="/admin/products" exact={true} element={<ProductManagement/>} />
-        <Route path="/admin/categories" exact={true} element={<CategoryManagement/>} /> */}
       </Routes>
       {/* <Footer/> */}
     </BrowserRouter>
