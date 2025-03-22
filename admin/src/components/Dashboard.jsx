@@ -80,9 +80,9 @@ const Dashboard = () => {
 
       // Fetch all data in parallel
       const [ordersResponse, productsResponse, categoriesResponse] = await Promise.all([
-        axios.get('http://localhost:3000/api/orders', { headers }),
-        axios.get('http://localhost:3000/api/products', { headers }),
-        axios.get('http://localhost:3000/api/category', { headers })
+        axios.get(`${import.meta.env.VITE_API_URL}/orders`, { headers }),
+        axios.get(`${import.meta.env.VITE_API_URL}/products`, { headers }),
+        axios.get(`${import.meta.env.VITE_API_URL}/categories`, { headers })
       ]);
 
       console.log('Categories Response:', categoriesResponse);

@@ -50,7 +50,7 @@ const OrderList = () => {
     try {
       setLoading(true);
       setError('');
-      const response = await axios.get('http://localhost:3000/api/orders', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/orders`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('adminToken')}`
         }
@@ -82,7 +82,7 @@ const OrderList = () => {
     try {
       setError('');
       const response = await axios.patch(
-        `http://localhost:3000/api/orders/${orderId}/status`,
+        `${import.meta.env.VITE_API_URL}/orders/${orderId}/status`,
         { status: newStatus },
         {
           headers: {
