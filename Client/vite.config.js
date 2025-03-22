@@ -67,10 +67,11 @@ export default defineConfig({
     extensions: ['.js', '.jsx', '.json']
   },
   define: {
-    'global': {},
-    '$': 'jquery',
-    'jQuery': 'jquery',
-    'window.jQuery': 'jquery'
+    global: 'globalThis',
+    'process.env': {},
+    'window.jQuery': 'jQuery',
+    jQuery: 'jQuery',
+    $: 'jQuery'
   },
   esbuild: {
     loader: 'jsx',
