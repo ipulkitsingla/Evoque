@@ -12,7 +12,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           mui: ['@mui/material', '@mui/icons-material', '@mui/styles'],
-          slider: ['react-slick', 'slick-carousel'],
+          slider: ['react-slick', 'slick-carousel', 'swiper'],
           bootstrap: ['bootstrap', 'react-bootstrap']
         }
       },
@@ -26,8 +26,15 @@ export default defineConfig({
       transformMixedEsModules: true
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        quietDeps: true
+      }
+    }
+  },
   optimizeDeps: {
-    include: ['@popperjs/core', 'bootstrap']
+    include: ['@popperjs/core', 'bootstrap', 'swiper/react', 'swiper/css']
   },
   resolve: {
     alias: {
