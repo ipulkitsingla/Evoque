@@ -18,7 +18,8 @@ export default defineConfig({
           image: ['react-inner-image-zoom', 'react-image-magnify', 'react-lazy-load-image-component'],
           ui: ['react-loading-skeleton', 'react-hot-toast', 'react-toastify'],
           bootstrap: ['bootstrap', 'react-bootstrap'],
-          utils: ['moment', 'jwt-decode', 'axios']
+          utils: ['moment', 'jwt-decode', 'axios'],
+          jquery: ['jquery']
         }
       }
     }
@@ -69,9 +70,9 @@ export default defineConfig({
   define: {
     global: 'globalThis',
     'process.env': {},
-    'window.jQuery': 'jQuery',
-    jQuery: 'jQuery',
-    $: 'jQuery'
+    'window.jQuery': 'window.$',
+    'window.$': 'require("jquery")',
+    'jquery': 'require("jquery")'
   },
   esbuild: {
     loader: 'jsx',

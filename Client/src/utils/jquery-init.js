@@ -1,6 +1,8 @@
-import jQuery from 'jquery';
+import $ from 'jquery';
 
-window.jQuery = jQuery;
-window.$ = jQuery;
+if (typeof window !== 'undefined') {
+    window.$ = $;
+    window.jQuery = $;
+}
 
-export default jQuery; 
+export default $; 
