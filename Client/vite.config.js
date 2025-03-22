@@ -12,7 +12,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           mui: ['@mui/material', '@mui/icons-material', '@mui/styles'],
-          slider: ['react-slick', 'slick-carousel', 'swiper'],
+          slider: ['react-slick', 'slick-carousel', 'swiper', 'react-range-slider-input'],
           bootstrap: ['bootstrap', 'react-bootstrap']
         }
       },
@@ -34,7 +34,13 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['@popperjs/core', 'bootstrap', 'swiper/react', 'swiper/css']
+    include: [
+      '@popperjs/core',
+      'bootstrap',
+      'swiper/react',
+      'swiper/css',
+      'react-range-slider-input'
+    ]
   },
   resolve: {
     alias: {
