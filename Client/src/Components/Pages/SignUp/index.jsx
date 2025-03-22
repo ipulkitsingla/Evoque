@@ -2,8 +2,8 @@ import { Button } from "@mui/material";
 import logo from "../../../assets/logo.png";
 import TextField from '@mui/material/TextField';
 import { Link, useNavigate } from "react-router-dom";
-import googleicon from "../../../assets/google.png";
 import { useState } from "react";
+import axios from "axios";
 import { auth } from '../../../services/api';
 
 const SignUp = () => {
@@ -126,10 +126,6 @@ const SignUp = () => {
                                     {loading ? 'Signing Up...' : 'Sign Up'}
                                 </Button>
                                 <p>Already Registered? <Link to="/signin" className="forgotpsw mb-3">Sign In</Link></p>
-                                <h5 className="text-center font-weight-bold">Or continue with social account</h5>
-                                <div className="google-signin d-flex justify-content-center align-item-center">
-                                    <span><img src={googleicon} className="w-100 mt-3" alt="Google Sign Up"/></span>
-                                </div>
                             </form>
                         </div>
                     </div>

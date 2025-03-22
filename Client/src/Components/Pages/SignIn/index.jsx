@@ -2,9 +2,9 @@ import { Button } from "@mui/material";
 import logo from "../../../assets/logo.png";
 import TextField from '@mui/material/TextField';
 import { Link, useNavigate } from "react-router-dom";
-import googleicon from "../../../assets/google.png";
 import { useState } from "react";
 import { auth } from '../../../services/api';
+import axios from "axios";
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -78,10 +78,6 @@ const SignIn = () => {
                                     {loading ? 'Signing In...' : 'Sign In'}
                                 </Button>
                                 <p>Not Registered? <Link to="/signup" className="forgotpsw mb-3">Sign Up</Link></p>
-                                <h5 className="text-center font-weight-bold">Or continue with social account</h5>
-                                <div className="google-signin d-flex justify-content-center align-item-center">
-                                    <span><img src={googleicon} className="w-100 mt-3" alt="Google Sign In"/></span>
-                                </div>
                             </form>
                         </div>
                     </div>

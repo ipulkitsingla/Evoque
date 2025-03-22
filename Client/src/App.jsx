@@ -9,8 +9,6 @@ import SignUp from "./Components/Pages/SignUp";
 import Profile from "./Components/Pages/Profile";
 import Orders from "./Components/Pages/Orders";
 import AdminDashboard from "../../admin/src/components/Dashboard";
-import { useState } from "react";
-import { GoogleLogin } from '@react-oauth/google';
 import './App.css';
 
 function App() {
