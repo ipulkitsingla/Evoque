@@ -1,10 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
+import inject from '@rollup/plugin-inject'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      ...inject({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      }),
+      enforce: 'post'
+    }
+  ],
   build: {
     outDir: 'dist',
     sourcemap: false,
@@ -69,10 +80,7 @@ export default defineConfig({
   },
   define: {
     global: 'globalThis',
-    'process.env': {},
-    'window.jQuery': 'window.$',
-    'window.$': 'require("jquery")',
-    'jquery': 'require("jquery")'
+    'process.env': {}
   },
   esbuild: {
     loader: 'jsx',
