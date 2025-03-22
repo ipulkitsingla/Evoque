@@ -172,7 +172,7 @@ const Profile = () => {
         formDataToSend.append('avatar', avatarFile);
       }
 
-      const response = await fetch('http://localhost:3000/api/user/profile', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/user/profile`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`

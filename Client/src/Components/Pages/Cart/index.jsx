@@ -291,7 +291,7 @@ const Cart = () => {
             // Place order
             let response;
             try {
-                const apiUrl = 'http://localhost:3000/api/orders';
+                const apiUrl = `${import.meta.env.VITE_API_URL}/orders`;
                 
                 response = await fetch(apiUrl, {
                     method: 'POST',
@@ -388,7 +388,7 @@ const Cart = () => {
             }
 
             // First validate the coupon
-            const response = await fetch('http://localhost:3000/api/coupons/validate', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/coupons/validate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -409,7 +409,7 @@ const Cart = () => {
             }
 
             // If validation successful, apply the coupon
-            const applyResponse = await fetch('http://localhost:3000/api/coupons/apply', {
+            const applyResponse = await fetch(`${import.meta.env.VITE_API_URL}/coupons/apply`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

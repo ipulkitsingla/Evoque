@@ -20,7 +20,7 @@ const HomeCategory = () => {
 
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/category');
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/category`);
             if (response.data && response.data.categories) {
                 setCategories(response.data.categories);
             } else if (response.data && Array.isArray(response.data)) {

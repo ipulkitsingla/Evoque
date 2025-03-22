@@ -37,7 +37,7 @@ const ProductDetails = () => {
 
     const fetchProduct = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/products/${id}`);
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/products/${id}`);
             setProduct(response.data);
         } catch (error) {
             console.error('Error fetching product:', error);
@@ -137,7 +137,7 @@ const ProductDetails = () => {
         try {
             const token = localStorage.getItem('userToken');
             const response = await axios.post(
-                `http://localhost:3000/api/products/${id}/review`, 
+                `${import.meta.env.VITE_API_URL}/products/${id}/review`, 
                 {
                     name: reviewerName.trim(),
                     rating: userRating,
